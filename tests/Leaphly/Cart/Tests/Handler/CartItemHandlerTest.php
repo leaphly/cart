@@ -152,7 +152,7 @@ class CartItemHandlerTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @expectedException \Symfony\Component\HttpKernel\Exception\NotAcceptableHttpException
      */
     public function testPostItemException()
     {

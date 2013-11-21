@@ -5,7 +5,7 @@ namespace Leaphly\Cart\Handler;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use Symfony\Component\Routing\Exception\InvalidParameterException;
+use Symfony\Component\HttpKernel\Exception\NotAcceptableHttpException;
 use PUGX\Godfather\Godfather;
 use Leaphly\Cart\Model\CartInterface;
 use Leaphly\Cart\Model\CartManagerWriterInterface;
@@ -79,7 +79,7 @@ class CartItemHandler implements CartItemHandlerInterface
      * @param array         $parameters
      *
      * @return CartInterface
-     * @throws \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @throws \Symfony\Component\HttpKernel\Exception\NotAcceptableHttpException
      */
     public function postItem(CartInterface $cart, array $parameters)
     {
@@ -87,7 +87,7 @@ class CartItemHandler implements CartItemHandlerInterface
         $productFamily = $this->productFamilyProvider->getProductFamily($parameters);
 
         if (null == $productFamily) {
-            throw new InvalidParameterException('Impossible to fetch product Family from Request.');
+            throw new NotAcceptableHttpException('Impossible to fetch product Family from Request.');
         }
 
         $cartItemHandler = $this->strategy->getItemHandler($productFamily);
@@ -112,7 +112,7 @@ class CartItemHandler implements CartItemHandlerInterface
      * @param array         $parameters
      *
      * @return CartInterface
-     * @throws \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @throws \Symfony\Component\HttpKernel\Exception\NotAcceptableHttpException
      */
     public function patchItem(CartInterface $cart, ItemInterface $item, array $parameters)
     {
@@ -120,7 +120,7 @@ class CartItemHandler implements CartItemHandlerInterface
         $productFamily = $this->productFamilyProvider->getProductFamily($parameters);
 
         if (null == $productFamily) {
-            throw new InvalidParameterException('Impossible to fetch product Family from Request.');
+            throw new NotAcceptableHttpException('Impossible to fetch product Family from Request.');
         }
 
         $cartItemHandler = $this->strategy->getItemHandler($productFamily);

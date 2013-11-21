@@ -1,8 +1,9 @@
-CartBundle
+cart
 =================
 
-[![Build Status](https://secure.travis-ci.org/leaphly/CartBundle.png?branch=master)](http://travis-ci.org/leaphly/CartBundle) [![Total Downloads](https://poser.pugx.org/leaphly/cart-bundle/downloads.png)](https://packagist.org/packages/leaphly/cart-bundle) [![Latest Stable Version](https://poser.pugx.org/leaphly/cart-bundle/v/stable.png)](https://packagist.org/packages/leaphly/cart-bundle)
+[![Build Status](https://secure.travis-ci.org/leaphly/cart.png?branch=master)](http://travis-ci.org/leaphly/cart) [![Total Downloads](https://poser.pugx.org/leaphly/cart/downloads.png)](https://packagist.org/packages/leaphly/cart) [![Latest Stable Version](https://poser.pugx.org/leaphly/cart/v/stable.png)](https://packagist.org/packages/leaphly/cart)
 
+#### This library is far from complete, at least the tests are green.
 
 Mission-statement
 ----------
@@ -30,7 +31,7 @@ Test
 ----
 
 ``` bash
-composer.phar create-project leaphly/cart-bundle`
+composer.phar create-project leaphly/cart`
 vendor/bin/phpunit
 ```
 
@@ -39,29 +40,24 @@ All the Functional testing are into the [leaphly-sandbox](https://github.com/lea
 About
 -----
 
-CartBundle is a [leaphly](https://github.com/leaphly) initiative.
-See also the list of [contributors](https://github.com/leaphly/CartBundle/contributors).
-CartBundle has been inspired by the architecture of FosUserBundle.
+cart is a [leaphly](https://github.com/leaphly) initiative.
+See also the list of [contributors](https://github.com/leaphly/cart/contributors).
 
 Reporting an issue or a feature request
 ---------------------------------------
 
-Issues and feature requests are tracked in the [Github issue tracker](https://github.com/leaphly/CartBundle/issues).
+Issues and feature requests are tracked in the [Github issue tracker](https://github.com/leaphly/cart/issues).
 
 When reporting a bug, it may be a good idea to reproduce it in a basic project
 built using the [Symfony Standard Edition](https://github.com/symfony/symfony-standard)
-to allow developers of the bundle to reproduce the issue by simply cloning it
+to allow developers of the library to reproduce the issue by simply cloning it
 and following some steps.
 
 
 TODO
------------------------
-
-- Complete the Rest controllers.
+-----
 
 - Better usage of the finite transitions.
-
-- Decouple Bundle and library.
 
 - Add more DB drivers
 

@@ -1,8 +1,8 @@
 {
-    "name": "leaphly/cart-bundle",
-    "type": "symfony-bundle",
-    "description": "Cart Bundle",
-    "keywords": ["Cart management"],
+    "name": "leaphly/cart",
+    "type": "library",
+    "description": "high quality php shopping Cart.",
+    "keywords": ["shopping cart management"],
     "homepage": "http://leaphly.org",
     "license": "MIT",
     "authors": [
@@ -18,27 +18,26 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.2",
-        "symfony/framework-bundle": "~2.1",
+        "doctrine/common": "dev-master",
+        "symfony/validator": "dev-master",
+        "symfony/event-dispatcher": "dev-master",
         "symfony/form": "~2.1",
-        "jms/serializer-bundle": "dev-master",
+        "jms/serializer": "dev-master",
         "pugx/godfather": "dev-master",
-        "yohang/finite": "dev-master"
+        "yohang/finite": "dev-master",
+        "symfony/http-kernel": "dev-master"
     },
     "require-dev": {
-        "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "phpunit/phpunit": "3.7.*",
-        "liip/functional-test-bundle":"dev-master"
+        "phpunit/phpunit": "3.7.*"
     },
     "suggest": {
-        "doctrine/doctrine-fixtures-bundle": "Required when using the fixture loading functionality",
-        "doctrine/mongodb-odm-bundle": "Required when using ODM as db-driver",
-        "doctrine/doctrine-bundle": "Required when using ORM as db-driver",
-        "friendsofsymfony/rest-bundle": "Required if you want to use the Rest Controller"
+        "doctrine/orm": "Required when using ORM as db-driver",
+        "doctrine/odm": "Required when using ODM as db-driver"
     },
     "autoload": {
-        "psr-0": { "Leaphly\\CartBundle": "" }
+        "psr-0": { "Leaphly\\Cart\\": "src/" }
     },
-    "target-dir": "Leaphly/CartBundle",
+
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.x-dev"

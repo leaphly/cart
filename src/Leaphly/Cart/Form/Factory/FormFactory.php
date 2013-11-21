@@ -3,7 +3,6 @@
 namespace Leaphly\Cart\Form\Factory;
 
 use Symfony\Component\Form\FormFactoryInterface;
-use Acme\Cart\Form\CartType;
 
 /**
  * @author Giulio De Donato <liuggio@gmail.com>
