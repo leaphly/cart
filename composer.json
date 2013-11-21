@@ -1,0 +1,47 @@
+{
+    "name": "leaphly/cart-bundle",
+    "type": "symfony-bundle",
+    "description": "Cart Bundle",
+    "keywords": ["Cart management"],
+    "homepage": "http://leaphly.org",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giulio De Donato",
+            "email": "liuggio@gmail.com"
+        },
+        {
+            "name": "Leaphly Community",
+            "homepage": "https://github.com/leaphly/CartBundle/contributors"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "~2.1",
+        "symfony/form": "~2.1",
+        "jms/serializer-bundle": "dev-master",
+        "pugx/godfather": "dev-master",
+        "yohang/finite": "dev-master"
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "dev-master",
+        "phpunit/phpunit": "3.7.*",
+        "liip/functional-test-bundle":"dev-master"
+    },
+    "suggest": {
+        "doctrine/doctrine-fixtures-bundle": "Required when using the fixture loading functionality",
+        "doctrine/mongodb-odm-bundle": "Required when using ODM as db-driver",
+        "doctrine/doctrine-bundle": "Required when using ORM as db-driver",
+        "friendsofsymfony/rest-bundle": "Required if you want to use the Rest Controller"
+    },
+    "autoload": {
+        "psr-0": { "Leaphly\\CartBundle": "" }
+    },
+    "target-dir": "Leaphly/CartBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
