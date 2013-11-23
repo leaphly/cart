@@ -14,23 +14,23 @@ class InvalidFormException extends NotAcceptableHttpException implements Excepti
     /**
      * @var array|null
      */
-    protected $data;
+    protected $form;
 
     /**
      * @param string $message
-     * @param array|null $data
+     * @param array|null $form
      */
-    public function __construct($message, $data = null)
+    public function __construct($message, $form = null)
     {
         parent::__construct($message);
-        $this->data = $data;
+        $this->form = $form;
     }
 
     /**
      * @return array|null
      */
-    public function getData()
+    public function getForm()
     {
-        return $this->data;
+        return $this->form;
     }
 }
