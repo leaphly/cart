@@ -17,7 +17,7 @@ class InvalidFormException extends NotAcceptableHttpException implements Excepti
     protected $form;
 
     /**
-     * @param string $message
+     * @param string     $message
      * @param array|null $form
      */
     public function __construct($message, $form = null)

@@ -13,8 +13,8 @@ use Leaphly\Cart\Transition\TransitionInterface;
  * @author Giulio De Donato <liuggio@gmail.com>
  * @package Leaphly\Cart\Tests\Handler
  */
-class CartItemHandlerTest extends \PHPUnit_Framework_TestCase {
-
+class CartItemHandlerTest extends \PHPUnit_Framework_TestCase
+{
     protected $cartManagerWriterMock;
     protected $productFamilyProviderMock;
     protected $godFatherStrategyMock;
@@ -146,7 +146,6 @@ class CartItemHandlerTest extends \PHPUnit_Framework_TestCase {
         $this->cartManagerWriterMock->expects($this->once())
             ->method('updateCart')
             ->with($this->equalTo($cartMock));
-
 
         $this->cartItemHandler->patchItem($cartMock, $cartItemMock, $parameters);
     }

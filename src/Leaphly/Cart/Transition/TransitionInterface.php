@@ -24,7 +24,7 @@ Interface TransitionInterface
      * @param CartInterface $cart       The cart
      * @param string        $transition The transition name
      *
-     * @return Boolean      True if the Cart can do that transition.
+     * @return Boolean True if the Cart can do that transition.
      *
      * @api
      */

@@ -3,7 +3,6 @@
 namespace Leaphly\Cart\Handler;
 
 use Leaphly\Cart\Model\CartInterface;
-use Leaphly\Cart\Model\ItemInterface;
 
 /**
  *

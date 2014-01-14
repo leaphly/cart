@@ -25,7 +25,7 @@ class FiniteTransition implements TransitionInterface
 
     /**
      * @param CartManagerWriterInterface $cartManager
-     * @param Context $finiteContext
+     * @param Context                    $finiteContext
      */
     public function __construct(CartManagerWriterInterface $cartManager, Context $finiteContext)
     {

@@ -23,7 +23,7 @@ class PriceCalculatorListener
 
     /**
      * @param PriceCalculatorInterface $priceCalculator
-     * @param string $class
+     * @param string                   $class
      */
     public function __construct(PriceCalculatorInterface $priceCalculator, $class = 'Leaphly\Cart\Model\CartInterface')
     {

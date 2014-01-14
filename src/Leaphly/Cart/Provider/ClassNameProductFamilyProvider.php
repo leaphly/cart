@@ -24,7 +24,7 @@ class ClassNameProductFamilyProvider implements ProductFamilyProviderInterface
 
     /**
      * @param ObjectManager $om
-     * @param $class
+     *                          @param $class
      */
     public function __construct(ObjectManager $om, $class)
     {
@@ -47,7 +47,6 @@ class ClassNameProductFamilyProvider implements ProductFamilyProviderInterface
         $productRequest = $this->extractProductParametersFromRequest($parameters);
 
         if (isset($productRequest[ProductFamilyProviderInterface::FAMILY_PARAMETER])) {
-
             return  $productRequest[ProductFamilyProviderInterface::FAMILY_PARAMETER];
         }
 
@@ -71,15 +70,14 @@ class ClassNameProductFamilyProvider implements ProductFamilyProviderInterface
     {
         $productRequest = array();
 
-        if(isset($parameters[ProductFamilyProviderInterface::FAMILY_PARAMETER])) {
+        if (isset($parameters[ProductFamilyProviderInterface::FAMILY_PARAMETER])) {
             $family =  $parameters[ProductFamilyProviderInterface::FAMILY_PARAMETER];
             $productRequest[ProductFamilyProviderInterface::FAMILY_PARAMETER] = $family;
         }
-        if(isset($parameters[ProductFamilyProviderInterface::PRODUCT_ID_PARAMETER])) {
+        if (isset($parameters[ProductFamilyProviderInterface::PRODUCT_ID_PARAMETER])) {
             $productId = $parameters[ProductFamilyProviderInterface::PRODUCT_ID_PARAMETER];
             $productRequest[ProductFamilyProviderInterface::PRODUCT_ID_PARAMETER] = $productId;
         }
-
 
         return $productRequest;
     }

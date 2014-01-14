@@ -2,7 +2,6 @@
 
 namespace Leaphly\Cart\Tests\Provider;
 
-use Symfony\Component\HttpFoundation\Request;
 use Leaphly\Cart\Provider\SimpleProductFamilyProvider;
 
 /**

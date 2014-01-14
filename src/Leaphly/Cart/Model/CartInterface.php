@@ -18,7 +18,7 @@ interface CartInterface
     public function getIdentifier();
 
     /**
-     * @param String $identifier
+     * @param  String $identifier
      * @return mixed
      */
     public function setIdentifier($identifier);

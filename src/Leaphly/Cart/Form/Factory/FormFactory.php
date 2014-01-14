@@ -31,9 +31,9 @@ class FormFactory implements FactoryInterface
 
     /**
      * @param FormFactoryInterface $formFactory
-     * @param $name
-     * @param $type
-     * @param array $validationGroups
+     *                                               @param $name
+     *                                               @param $type
+     * @param array                $validationGroups
      */
     public function __construct(FormFactoryInterface $formFactory, $name, $type, array $validationGroups = null)
     {
@@ -45,8 +45,8 @@ class FormFactory implements FactoryInterface
     }
 
     /**
-     * @param array $options
-     * @param null $data
+     * @param  array                                 $options
+     * @param  null                                  $data
      * @return \Symfony\Component\Form\FormInterface
      */
     public function createForm($options = array(), $data = null)

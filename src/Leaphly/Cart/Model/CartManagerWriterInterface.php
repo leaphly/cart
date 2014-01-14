@@ -37,7 +37,7 @@ interface CartManagerWriterInterface
      * @return void
      */
     public function updateCart(CartInterface $cart, $andFlush = true);
-    
+
     /**
      * Add an item to cart.
      *

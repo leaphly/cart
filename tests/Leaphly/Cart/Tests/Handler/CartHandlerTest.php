@@ -55,7 +55,6 @@ class CartHandlerTest extends \PHPUnit_Framework_TestCase
         $handler->deleteCart($cart);
     }
 
-
     public function testPostCart()
     {
         $priceToAssert = 10;

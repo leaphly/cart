@@ -23,7 +23,6 @@ Interface ItemHandlerInterface
      */
     public function postItem(CartInterface $cart, array $parameters);
 
-
     /**
      * @param CartInterface $cart
      * @param ItemInterface $item
@@ -46,6 +45,5 @@ Interface ItemHandlerInterface
      * @api
      */
     public function deleteItem(CartInterface $cart, ItemInterface $item);
-
 
 }

@@ -2,8 +2,6 @@
 
 namespace Leaphly\Cart\Model;
 
-use JMS\Serializer\Annotation\Groups;
-use JMS\Serializer\Annotation\Accessor;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;

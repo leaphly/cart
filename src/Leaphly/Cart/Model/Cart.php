@@ -4,9 +4,6 @@ namespace Leaphly\Cart\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Finite\StatefulInterface;
-use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\Groups;
-use JMS\Serializer\Annotation\Accessor;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -85,7 +82,7 @@ abstract class Cart implements CartInterface, StatefulInterface
 
      /**
       * @var float $finalPrice
- 	  * @Expose
+      * @Expose
       * @Type("float")
       * @SerializedName("finalPrice")
       */
@@ -102,7 +99,7 @@ abstract class Cart implements CartInterface, StatefulInterface
     }
 
     /**
-     * @param String $identifier
+     * @param  String     $identifier
      * @return mixed|void
      */
     public function setIdentifier($identifier)
@@ -176,7 +173,7 @@ abstract class Cart implements CartInterface, StatefulInterface
     }
 
     /**
-     * @param ItemInterface $item
+     * @param  ItemInterface $item
      * @return CartInterface
      */
     public function addItem(ItemInterface $item)

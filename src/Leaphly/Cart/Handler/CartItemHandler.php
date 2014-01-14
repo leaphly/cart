@@ -138,7 +138,6 @@ class CartItemHandler implements CartItemHandlerInterface
         return $cart;
     }
 
-
     /**
      * Remove the given cart item from the given cart and apply a transition
      * from current state to TRANSITION_DELETE.
@@ -168,7 +167,7 @@ class CartItemHandler implements CartItemHandlerInterface
      */
     public function deleteAllItems(CartInterface $cart)
     {
-        foreach($cart->getItems() as $item) {
+        foreach ($cart->getItems() as $item) {
             $this->doDeleteItem($cart, $item);
         }
 

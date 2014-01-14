@@ -38,7 +38,7 @@ interface CartHandlerInterface
     /**
      * Post Cart, creates a new Cart.
      *
-     * @param array  $parameters
+     * @param array $parameters
      *
      * @return CartInterface|\Symfony\Component\Form\FormInterface
      */
@@ -67,4 +67,4 @@ interface CartHandlerInterface
      * @api
      */
     public function patchCart(CartInterface $cart, array $parameters);
-} 
+}

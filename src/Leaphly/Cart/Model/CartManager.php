@@ -56,6 +56,7 @@ abstract class CartManager implements CartManagerInterface
     {
         $return = $cart->removeItem($item);
         $this->updateCart($cart);
+
         return $return;
     }
 

@@ -42,7 +42,6 @@ interface CartManagerReaderInterface
      */
     public function findCartBy(array $criteria);
 
-
     /**
      * Returns the cart's fully qualified class name.
      *
