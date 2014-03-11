@@ -40,7 +40,7 @@ All the Functional testing are into the [leaphly-sandbox](https://github.com/lea
 About
 -----
 
-cart is a [leaphly](https://github.com/leaphly) initiative.
+Cart is a [leaphly](https://github.com/leaphly) initiative.
 See also the list of [contributors](https://github.com/leaphly/cart/contributors).
 
 Reporting an issue or a feature request

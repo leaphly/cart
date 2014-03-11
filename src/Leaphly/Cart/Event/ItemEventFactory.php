@@ -2,7 +2,6 @@
 
 namespace Leaphly\Cart\Event;
 
-use Leaphly\Cart\Event\ItemEvent;
 use Leaphly\Cart\Model\CartInterface;
 use Leaphly\Cart\Model\ItemInterface;
 

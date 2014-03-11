@@ -24,7 +24,7 @@ class ClassNameProductFamilyProvider implements ProductFamilyProviderInterface
 
     /**
      * @param ObjectManager $om
-     *                          @param $class
+     * @param $class
      */
     public function __construct(ObjectManager $om, $class)
     {

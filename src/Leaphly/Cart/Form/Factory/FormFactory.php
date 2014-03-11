@@ -31,8 +31,8 @@ class FormFactory implements FactoryInterface
 
     /**
      * @param FormFactoryInterface $formFactory
-     *                                               @param $name
-     *                                               @param $type
+     * @param $name
+     * @param $type
      * @param array                $validationGroups
      */
     public function __construct(FormFactoryInterface $formFactory, $name, $type, array $validationGroups = null)
