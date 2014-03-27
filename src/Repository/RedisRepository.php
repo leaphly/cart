@@ -21,7 +21,7 @@ class RedisRepository extends CartQuery implements RepositoryInterface
      *
      * @param string $identity
      *
-     * @return \Leaphly\Cart\Cart
+     * @return Cart
      */
     public function find($identity)
     {
@@ -33,7 +33,7 @@ class RedisRepository extends CartQuery implements RepositoryInterface
      *
      * @param array $criteria
      *
-     * @return CartInterface
+     * @return Cart
      * @throws \BadMethodCallException
      */
     public function findCartBy(array $criteria)

@@ -31,7 +31,7 @@ Class PriceSet
 
     /**
      * @param Money|Array $prices
-     * @param null $defaultKey
+     * @param null        $defaultKey
      */
     public function __construct($prices, $defaultKey = null)
     {
@@ -71,7 +71,7 @@ Class PriceSet
     }
 
     /**
-     * @param PriceSet $other
+     * @param  PriceSet $other
      * @return bool
      */
     public function equals(PriceSet $other)
@@ -100,7 +100,7 @@ Class PriceSet
     }
 
     /**
-     * @param PriceSet $subtrahend
+     * @param  PriceSet $subtrahend
      * @return PriceSet
      */
     public function subtract(PriceSet $subtrahend)
@@ -120,7 +120,7 @@ Class PriceSet
 
     /**
      * @param $multiplier
-     * @param int $rounding_mode
+     * @param  int      $rounding_mode
      * @return PriceSet
      */
     public function multiply($multiplier, $rounding_mode = Money::ROUND_HALF_UP)
@@ -136,7 +136,7 @@ Class PriceSet
 
     /**
      * @param $divisor
-     * @param int $rounding_mode
+     * @param  int      $rounding_mode
      * @return PriceSet
      */
     public function divide($divisor, $rounding_mode = Money::ROUND_HALF_UP)

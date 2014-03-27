@@ -12,4 +12,4 @@ interface PriceRepositoryInterface
      * @return Price
      */
     public function getPriceForProductIdentity($productIdentity, $context);
-} 
+}

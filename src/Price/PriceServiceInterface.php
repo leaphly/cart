@@ -22,4 +22,4 @@ interface PriceServiceInterface
      * @return Priceset
      */
     public function calculatePriceSetForItem(ItemInterface $item, $context);
-} 
+}

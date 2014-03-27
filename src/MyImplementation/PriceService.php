@@ -25,7 +25,7 @@ class PriceService implements PriceServiceInterface
      */
     private $priceRepository;
 
-    function __construct(PriceRepositoryInterface $priceRepository)
+    public function __construct(PriceRepositoryInterface $priceRepository)
     {
         $this->priceRepository = $priceRepository;
     }
@@ -53,7 +53,7 @@ class PriceService implements PriceServiceInterface
 
     /**
      * @param ItemInterface $item
-     * @param array $context
+     * @param array         $context
      *
      * @return PriceSet
      */
@@ -67,7 +67,7 @@ class PriceService implements PriceServiceInterface
 
     /**
      * @param ProductInterface $product
-     * @param array $context
+     * @param array            $context
      *
      * @return PriceSet
      */
@@ -75,4 +75,4 @@ class PriceService implements PriceServiceInterface
     {
         return $this->priceRepository->getPriceSetForProductIdentity($product->getIdentity(), $context);
     }
-} 
+}
