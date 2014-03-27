@@ -10,6 +10,14 @@ class Cart
     protected $identity;
     /** @var  \Doctrine\Common\Collections\ArrayCollection */
     protected $items;
+    /** @var mixed $state */
+    protected $state;
+    /** @var \DateTime $expiresAt */
+    protected $expiresAt;
+    /** @var \DateTime $createdAt */
+    protected $createdAt;
+    /** @var \DateTime $updatedAt */
+    protected $updatedAt;
 
     public function __construct(IdentityInterface $identity)
     {
@@ -79,6 +87,14 @@ class Cart
         }
 
         return true;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getItems()
+    {
+        return $this->items;
     }
 
     /**
