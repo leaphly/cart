@@ -14,7 +14,7 @@ class MyCart extends BaseCart
      *
      * @param Ticket $ticket
      *
-     * @return string The Item Identifier
+     * @return string The Item Identity
      */
     public function addTicket(Ticket $ticket)
     {

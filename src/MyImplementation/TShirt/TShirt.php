@@ -2,8 +2,8 @@
 
 namespace Leaphly\Cart\MyImplementation\TShirt;
 
-use Leaphly\Cart\IdentifierInterface;
-use Leaphly\Cart\MyImplementation\Identifier\StringIdentifier;
+use Leaphly\Cart\IdentityInterface;
+use Leaphly\Cart\Identity\StringIdentity;
 use Leaphly\Cart\ProductInterface;
 
 class TShirt implements ProductInterface
@@ -20,10 +20,10 @@ class TShirt implements ProductInterface
     }
 
     /**
-     * @return IdentifierInterface
+     * @return IdentityInterface
      */
-    public function getIdentifier()
+    public function getIdentity()
     {
-        return new StringIdentifier(sprintf("%s-%s",$this->sku, $this->size));
+        return new StringIdentity(sprintf("%s-%s",$this->sku, $this->size));
     }
 }

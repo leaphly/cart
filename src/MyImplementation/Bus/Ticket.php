@@ -3,6 +3,7 @@
 namespace Leaphly\Cart\MyImplementation\Bus;
 
 use Leaphly\Cart\ProductInterface;
+use Leaphly\Cart\Identity\StringIdentity;
 
 class Ticket implements ProductInterface
 {
@@ -18,10 +19,10 @@ class Ticket implements ProductInterface
     }
 
     /**
-     * @return IdentifierInterface
+     * @return IdentityInterface
      */
-    public function getIdentifier()
+    public function getIdentity()
     {
-        return new StringIdentifier(sprintf("%s-%s", $this->ride, $this->passenger));
+        return new StringIdentity(sprintf("%s-%s", $this->ride, $this->passenger));
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Leaphly\Cart;
 
-interface IdentifierInterface
+interface IdentityInterface
 {
     public function __toString();
 }

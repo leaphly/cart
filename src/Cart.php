@@ -6,21 +6,19 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 class Cart
 {
-    /** @var \Leaphly\Cart\IdentifierInterface */
-    protected $identifier;
-    /** @var \Leaphly\Cart\RepositoryInterface */
-    protected $repository;
+    /** @var \Leaphly\Cart\IdentityInterface */
+    protected $identity;
     /** @var  \Doctrine\Common\Collections\ArrayCollection */
     protected $items;
 
-    public function __construct(RepositoryInterface $repository)
+    public function __construct(IdentityInterface $identity)
     {
-        $this->repository = $repository;
+        $this->identity = $identity;
         $this->items = new ArrayCollection();
     }
 
     /**
-     * Add an Item to the Cart, if the identifier already exists, it increases the quantity
+     * Add an Item to the Cart, if the identity already exists, it increases the quantity
      *
      * @param ItemInterface $item
 
@@ -28,18 +26,18 @@ class Cart
      */
     public function addItem(ItemInterface $item)
     {
-        if ($this->items->containsKey($item->getIdentifier())) {
-            $this->items->get($item->getIdentifier())->addQuantity($item);
+        if ($this->items->containsKey($item->getIdentity())) {
+            $this->items->get($item->getIdentity())->addQuantity($item);
 
             return true;
         }
-        $this->items->set($item->getIdentifier(), $item);
+        $this->items->set($item->getIdentity(), $item);
 
         return true;
     }
 
     /**
-     * Subtract an Item from the Cart, if the identifier does not exists an Exception is raised.
+     * Subtract an Item from the Cart, if the identity does not exists an Exception is raised.
      *
      * @param ItemInterface $item
 
@@ -48,9 +46,9 @@ class Cart
      */
     public function subtractItem(ItemInterface $item)
     {
-        if ($this->items->containsKey($item->getIdentifier())) {
+        if ($this->items->containsKey($item->getIdentity())) {
 
-            $this->items->get($item->getIdentifier())->subtractQuantity($item);
+            $this->items->get($item->getIdentity())->subtractQuantity($item);
 
             return true;
         }
@@ -60,21 +58,21 @@ class Cart
     }
 
     /**
-     * Subtract an Item from the Cart, if the identifier does not exists an Exception is raised.
+     * Subtract an Item from the Cart, if the identity does not exists an Exception is raised.
      *
-     * @param IdentifierInterface|ItemInterface $identifierOrItem
+     * @param IdentityInterface|ItemInterface $identityOrItem
      *
      * @return boolean
      * @throws \Exception
      */
-    public function removeItem($identifierOrItem)
+    public function removeItem($identityOrItem)
     {
-        $identifier = $identifierOrItem;
-        if ($identifierOrItem instanceof ItemInterface) {
-            $identifier = $identifierOrItem->getIdentifier();
+        $identity = $identityOrItem;
+        if ($identityOrItem instanceof ItemInterface) {
+            $identity = $identityOrItem->getIdentity();
         }
 
-        if (null == $this->items->remove($identifier)) {
+        if (null == $this->items->remove($identity)) {
 
             /* @todo: exception */
             throw new \Exception('impossible to find Item');
@@ -85,25 +83,25 @@ class Cart
 
     /**
      *
-     * @param IdentifierInterface|ItemInterface $identifierOrItem
+     * @param IdentityInterface|ItemInterface $identityOrItem
      *
      * @return mixed|null
      */
-    public function getItem($identifierOrItem)
+    public function getItem($identityOrItem)
     {
-        $identifier = $identifierOrItem;
-        if ($identifierOrItem instanceof ItemInterface) {
-            $identifier = $identifierOrItem->getIdentifier();
+        $identity = $identityOrItem;
+        if ($identityOrItem instanceof ItemInterface) {
+            $identity = $identityOrItem->getIdentity();
         }
 
-        return $this->items->get($identifier);
+        return $this->items->get($identity);
     }
 
     /**
-     * @return \Leaphly\Cart\IdentifierInterface
+     * @return \Leaphly\Cart\IdentityInterface
      */
-    public function getIdentifier()
+    public function getIdentity()
     {
-        return $this->identifier;
+        return $this->identity;
     }
 }

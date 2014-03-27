@@ -3,7 +3,7 @@
 namespace spec\Leaphly\Cart\Repository;
 
 use Leaphly\Cart\Cart;
-use Leaphly\Cart\IdentifierInterface;
+use Leaphly\Cart\IdentityInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -14,19 +14,19 @@ class ArrayRepositorySpec extends ObjectBehavior
         $this->shouldHaveType('Leaphly\Cart\Repository\ArrayRepository');
     }
 
-    function it_should_find_a_cart_by_identifier(Cart $cart, IdentifierInterface $identifier)
+    function it_should_find_a_cart_by_identity(Cart $cart, IdentityInterface $identity)
     {
-        $identifier->__toString()->willReturn("A");
-        $cart->getIdentifier()->willReturn($identifier);
+        $identity->__toString()->willReturn("A");
+        $cart->getIdentity()->willReturn($identity);
         $this->updateCart($cart);
 
         $this->find("A")->shouldBeLike($cart);
     }
 
-    function it_should_delete_a_cart_by_identifier_and_on_next_find_should_throw_exception(Cart $cart, IdentifierInterface $identifier)
+    function it_should_delete_a_cart_by_identity_and_on_next_find_should_throw_exception(Cart $cart, IdentityInterface $identity)
     {
-        $identifier->__toString()->willReturn("A");
-        $cart->getIdentifier()->willReturn($identifier);
+        $identity->__toString()->willReturn("A");
+        $cart->getIdentity()->willReturn($identity);
         $this->updateCart($cart);
         $this->find("A")->shouldBeLike($cart);
 
@@ -34,11 +34,11 @@ class ArrayRepositorySpec extends ObjectBehavior
         $this->shouldThrow('\Exception')->duringFind("A");
     }
 
-    function it_should_create_a_cart_and_update_a_cart(Cart $cart, IdentifierInterface $identifier, Cart $cart2)
+    function it_should_create_a_cart_and_update_a_cart(Cart $cart, IdentityInterface $identity, Cart $cart2)
     {
-        $identifier->__toString()->willReturn("A");
-        $cart->getIdentifier()->willReturn($identifier);
-        $cart2->getIdentifier()->willReturn($identifier);
+        $identity->__toString()->willReturn("A");
+        $cart->getIdentity()->willReturn($identity);
+        $cart2->getIdentity()->willReturn($identity);
 
         $this->updateCart($cart); // insertion
         $this->find("A")->shouldBeLike($cart);

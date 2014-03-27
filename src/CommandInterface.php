@@ -10,19 +10,19 @@ interface CommandInterface
     /**
      * Deletes a cart.
      *
-     * @param mixed $identifier
+     * @param mixed $identity
      *
      * @return boolean
      */
-    public function deleteCart($identifier);
+    public function deleteCart($identity);
 
     /**
      * Updates a cart, if not exist the cart is created.
      *
-     * @param Cart $cart
-     * @param Boolean       $andFlush
+     * @param Cart    $cart
+     * @param Boolean $andFlush
      *
      * @return boolean
      */
     public function updateCart(Cart $cart, $andFlush = true);
-} 
+}

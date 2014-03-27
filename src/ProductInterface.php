@@ -2,10 +2,6 @@
 
 namespace Leaphly\Cart;
 
-interface ProductInterface
+interface ProductInterface extends EntityInterface
 {
-    /**
-     * @return IdentifierInterface
-     */
-    public function getIdentifier();
 }

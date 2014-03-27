@@ -9,13 +9,13 @@ namespace Leaphly\Cart;
 interface QueryInterface
 {
     /**
-     * Finds a document by its identifier
+     * Finds a document by its identity
      *
-     * @param $identifier
+     * @param $identity
      *
      * @return CartInterface
      */
-    public function find($identifier);
+    public function find($identity);
 
     /**
      * Finds one cart by the given criteria.

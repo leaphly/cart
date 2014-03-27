@@ -19,13 +19,13 @@ class RedisRepository extends CartQuery implements RepositoryInterface
     /**
      * Get a cart.
      *
-     * @param string $identifier
+     * @param string $identity
      *
      * @return \Leaphly\Cart\Cart
      */
-    public function find($identifier)
+    public function find($identity)
     {
-        $this->client->get((string) $identifier);
+        $this->client->get((string) $identity);
     }
 
     /**
@@ -44,26 +44,25 @@ class RedisRepository extends CartQuery implements RepositoryInterface
     /**
      * Deletes a cart.
      *
-     * @param mixed $identifier
+     * @param mixed $identity
      *
      * @return boolean
      */
-    public function deleteCart($identifier)
+    public function deleteCart($identity)
     {
-        echo "";
-        $this->client->del((string) $identifier);
+        $this->client->del((string) $identity);
     }
 
     /**
      * Updates a cart, if not exist the cart is created.
      *
-     * @param Cart $cart
+     * @param Cart    $cart
      * @param Boolean $andFlush
      *
      * @return boolean
      */
     public function updateCart(Cart $cart, $andFlush = true)
     {
-        $this->client->set((string) $cart->getIdentifier(), $cart);
+        $this->client->set((string) $cart->getIdentity(), $cart);
     }
-} 
+}

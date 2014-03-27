@@ -12,21 +12,21 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 abstract class CartQuery implements QueryInterface
 {
     /**
-     * Finds a Cart by its identifier or raise the 404 exception.
+     * Finds a Cart by its identity or raise the 404 exception.
      *
-     * @param $identifier
+     * @param $identity
      *
      * @return mixed
      *
      * @throws NotFoundHttpException
      */
-    public function findOr404($identifier)
+    public function findOr404($identity)
     {
-        $cart = $this->find($identifier);
+        $cart = $this->find($identity);
         if (!$cart) {
-            throw new NotFoundHttpException($identifier);
+            throw new NotFoundHttpException($identity);
         }
 
         return $cart;
     }
-} 
+}

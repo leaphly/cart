@@ -3,7 +3,7 @@
 namespace spec\Leaphly\Cart\Repository;
 
 use Leaphly\Cart\Cart;
-use Leaphly\Cart\IdentifierInterface;
+use Leaphly\Cart\IdentityInterface;
 use PhpSpec\ObjectBehavior;
 use Predis\Client as BaseClient;
 use Prophecy\Argument;
@@ -32,28 +32,28 @@ class RedisRepositorySpec extends ObjectBehavior
         $this->beConstructedWith($client);
     }
 
-    function it_should_call_client_del_during_deleteCart($client, IdentifierInterface $identifier)
+    function it_should_call_client_del_during_deleteCart($client, IdentityInterface $identity)
     {
-        $identifier->__toString()->willReturn("A");
+        $identity->__toString()->willReturn("A");
 
         $client->del(Argument::any())->shouldBeCalled();
-        $this->deleteCart($identifier);
+        $this->deleteCart($identity);
     }
 
-    function it_should_call_client_set_during_updateCart($client, Cart $cart, IdentifierInterface $identifier)
+    function it_should_call_client_set_during_updateCart($client, Cart $cart, IdentityInterface $identity)
     {
-        $identifier->__toString()->willReturn("A");
-        $cart->getIdentifier()->willReturn($identifier);
+        $identity->__toString()->willReturn("A");
+        $cart->getIdentity()->willReturn($identity);
 
-        $client->set($identifier, $cart)->shouldBeCalled();
+        $client->set($identity, $cart)->shouldBeCalled();
         $this->updateCart($cart);
     }
 
-    function it_should_call_client_get_during_find($client, IdentifierInterface $identifier)
+    function it_should_call_client_get_during_find($client, IdentityInterface $identity)
     {
-        $identifier->__toString()->willReturn("A");
+        $identity->__toString()->willReturn("A");
 
-        $client->get($identifier)->shouldBeCalled();
-        $this->find($identifier);
+        $client->get($identity)->shouldBeCalled();
+        $this->find($identity);
     }
 } 

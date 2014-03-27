@@ -61,10 +61,10 @@ class Item implements ItemInterface
     /**
      * Is not might change on different TypeItem.
      *
-     * @return \Leaphly\Cart\IdentifierInterface
+     * @return \Leaphly\Cart\IdentityInterface
      */
-    public function getIdentifier()
+    public function getIdentity()
     {
-        return (string) $this->getProduct()->getIdentifier();
+        return (string) $this->getProduct()->getIdentity();
     }
 }

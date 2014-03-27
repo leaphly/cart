@@ -11,15 +11,15 @@ class ArrayRepository extends CartQuery implements RepositoryInterface
     public static $storage = array();
 
     /**
-     * Finds a document by its identifier
+     * Finds a document by its identity
      *
-     * @param $identifier
+     * @param $identity
      *
      * @return CartInterface
      */
-    public function find($identifier)
+    public function find($identity)
     {
-        return self::$storage[(string) $identifier];
+        return self::$storage[(string) $identity];
     }
 
     /**
@@ -38,13 +38,13 @@ class ArrayRepository extends CartQuery implements RepositoryInterface
     /**
      * Deletes a cart.
      *
-     * @param mixed $identifier
+     * @param mixed $identity
      *
      * @return boolean
      */
-    public function deleteCart($identifier)
+    public function deleteCart($identity)
     {
-        unset(self::$storage[(string) $identifier]);
+        unset(self::$storage[(string) $identity]);
 
         return true;
     }
@@ -52,14 +52,14 @@ class ArrayRepository extends CartQuery implements RepositoryInterface
     /**
      * Updates a cart, if not exist the cart is created.
      *
-     * @param Cart $cart
+     * @param Cart    $cart
      * @param Boolean $andFlush
      *
      * @return boolean
      */
     public function updateCart(Cart $cart, $andFlush = true)
     {
-        self::$storage[(string) $cart->getIdentifier()] = $cart;
+        self::$storage[(string) $cart->getIdentity()] = $cart;
 
         return true;
     }

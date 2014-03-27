@@ -2,7 +2,7 @@
 
 namespace spec\Leaphly\Cart\MyImplementation;
 
-use Leaphly\Cart\IdentifierInterface;
+use Leaphly\Cart\IdentityInterface;
 use Leaphly\Cart\MyImplementation\Bus\Ticket;
 use Leaphly\Cart\MyImplementation\TShirt\Quantity;
 use Leaphly\Cart\MyImplementation\TShirt\TShirt;
@@ -17,9 +17,9 @@ class MyCartSpec extends ObjectBehavior
         $this->shouldHaveType('Leaphly\Cart\MyImplementation\MyCart');
     }
 
-    function let(IdentifierInterface $identifier)
+    function let(IdentityInterface $identity)
     {
-        $this->beConstructedWith($identifier);
+        $this->beConstructedWith($identity);
     }
 
     function it_should_permit_to_add_bus_product_and_passengers(Ticket $ticket)
@@ -32,35 +32,35 @@ class MyCartSpec extends ObjectBehavior
         $this->addTShirt($tShirt, 3)->shouldBeBoolean();
     }
 
-    function it_should_remove_an_item_by_product(IdentifierInterface $identifier, TShirt $tShirt, TShirtItem $TShirtItem)
+    function it_should_remove_an_item_by_product(IdentityInterface $identity, TShirt $tShirt, TShirtItem $TShirtItem)
     {
-        $identifier->__toString()->willReturn("A");
-        $tShirt->getIdentifier()->willReturn($identifier);
-        $TShirtItem->getIdentifier()->willReturn("A");
+        $identity->__toString()->willReturn("A");
+        $tShirt->getIdentity()->willReturn($identity);
+        $TShirtItem->getIdentity()->willReturn("A");
 
         $this->addTShirt($tShirt, 3);
         $this->removeItem($TShirtItem)->shouldBeBoolean();
         $this->shouldThrow('\Exception')->duringRemoveItem($tShirt);
     }
 
-    function it_modify_an_item_adding_the_quantity_for_a_tshirt(IdentifierInterface $identifier, TShirt $tShirt, TShirtItem $TShirtItem, TShirtItem $TShirtItemToAdd)
+    function it_modify_an_item_adding_the_quantity_for_a_tshirt(IdentityInterface $identity, TShirt $tShirt, TShirtItem $TShirtItem, TShirtItem $TShirtItemToAdd)
     {
-        $identifier->__toString()->willReturn("A");
-        $tShirt->getIdentifier()->willReturn($identifier);
-        $TShirtItem->getIdentifier()->willReturn("A");
-        $TShirtItemToAdd->getIdentifier()->willReturn("A");
+        $identity->__toString()->willReturn("A");
+        $tShirt->getIdentity()->willReturn($identity);
+        $TShirtItem->getIdentity()->willReturn("A");
+        $TShirtItemToAdd->getIdentity()->willReturn("A");
         $TShirtItem->addQuantity($TShirtItemToAdd)->shouldBeCalled();
 
         $this->addItem($TShirtItem);
         $this->addItem($TShirtItemToAdd);
     }
 
-    function it_modify_an_item_reducing_the_quantity_for_a_tshirt(IdentifierInterface $identifier, TShirt $tShirt, TShirtItem $TShirtItem, TShirtItem $TShirtItemToAdd)
+    function it_modify_an_item_reducing_the_quantity_for_a_tshirt(IdentityInterface $identity, TShirt $tShirt, TShirtItem $TShirtItem, TShirtItem $TShirtItemToAdd)
     {
-        $identifier->__toString()->willReturn("A");
-        $tShirt->getIdentifier()->willReturn($identifier);
-        $TShirtItem->getIdentifier()->willReturn("A");
-        $TShirtItemToAdd->getIdentifier()->willReturn("A");
+        $identity->__toString()->willReturn("A");
+        $tShirt->getIdentity()->willReturn($identity);
+        $TShirtItem->getIdentity()->willReturn("A");
+        $TShirtItemToAdd->getIdentity()->willReturn("A");
         $TShirtItem->subtractQuantity($TShirtItemToAdd)->shouldBeCalled();
 
         $this->addItem($TShirtItem);
@@ -72,7 +72,7 @@ class MyCartSpec extends ObjectBehavior
 
     }
 
-    function it_should_get_an_item_by_item_or_identifier()
+    function it_should_get_an_item_by_item_or_identity()
     {
 
     }
